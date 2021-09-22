@@ -1,0 +1,43 @@
+.list-features {
+    padding: $padding-block;
+
+    .list-features__header {
+        @include headers-font;
+    }
+
+    .features-card {
+        text-align: center;
+
+        .features-circle {
+            margin: 0 auto;
+            width: 90px;
+            height: 90px;
+            border: 1px solid #ececec;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 35px;
+
+            img {
+                max-width: 26px;
+                user-select: none;
+            }
+        }
+
+        h3 {
+            font-size: 24px;
+            color: $h-color;
+            margin-bottom: 20px;
+        }
+    
+        p {
+            font-size: 18px;
+            color: $text-color;
+        }
+    }
+}
