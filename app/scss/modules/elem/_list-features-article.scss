@@ -1,0 +1,37 @@
+.list-features-article {
+
+    .article-block {
+        padding: 50px 0 20px 0;
+
+        &:last-child {
+            padding: 65px 0;
+            background-color: #f2f2f2;
+        }
+    }
+
+    .list-features__header {
+        @include headers-font;
+        
+        .lines {
+            justify-content: start;
+            margin-bottom: 30px;
+        }
+    }
+
+
+
+
+
+    .content-article {
+        .list-features__list {
+            li {
+                display: flex;
+                // gap: 0 10px;
+                .img-icon {
+                    width: 25px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,78 @@
+.reviews {
+    background-image: url('../img/bg-reviews.png');
+    background-color: bisque;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 65px 0;
+    
+    .reviews-header {
+        @include headers-font;
+        
+        h2 {
+            color: white;
+        }
+    }
+
+
+    .swiper-wrapper {
+        padding-bottom: 140px;
+    }
+    
+    .swiper-pagination-bullet {
+        background-color: transparent;
+        border: 1px solid white;
+        width: 8px;
+        height: 8px;
+
+        &-active {
+            background-color: white;
+            border: none;
+            width: 15px;
+            height: 15px;
+        }    
+    }
+    
+    
+    
+    
+    .carousel-card {
+        .carousel__text {
+            p {
+                color: white;
+                font-size: 24px;
+            }
+        }
+        .carousel__autor {
+            display: flex;
+            align-items: center;
+            gap: 0 25px;
+            
+            .carousel__autor-text {
+                ul {
+                    margin-bottom: 0;
+
+                    li.carousel-link {
+                        // margin-bottom: 5px;
+    
+                        &:last-child{
+                            margin-bottom: 0px;
+                        }
+                        .carousel-h3 {
+                            color: white;
+                            font-size: 16px;
+                        }
+                        .carousel-p {
+                            color: white;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
