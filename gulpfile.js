@@ -1,14 +1,15 @@
 const gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
-    pug = require('gulp-pug'),
+    // pug = require('gulp-pug'),
     sass = require('gulp-sass')(require('sass')),
 
     app = 'app/',
-        dist = 'dist/';
+    dist = 'dist/';
 
 const config = {
     app: {
-        html: app + 'pug/*.pug',
+        // html: app + 'pug/*.pug',
+        html: app + 'html/*.html',
         style: app + 'scss/**/*.scss',
         js: app + 'js/**/*.js',
         img: app + 'img/**/*.*',
@@ -22,7 +23,8 @@ const config = {
         fonts: dist + 'fonts/',
     },
     watch: {
-        html: app + 'pug/*.pug',
+        // html: app + 'pug/*.pug',
+        html: app + 'html/*.html',
         style: app + 'scss/**/*.scss',
         js: app + 'js/**/*.js',
         img: app + 'img/**/*.*',
@@ -51,13 +53,22 @@ const webServer = () => {
     })
 }
 
-// Pug
-const pugTask = () => {
+// // Pug
+// const pugTask = () => {
+//     return gulp.src(config.app.html)
+//         .pipe(pug())
+//         .pipe(pug({
+//             pretty: false
+//         }))
+//         .pipe(gulp.dest(config.dist.html))
+//         .pipe(browserSync.reload({
+//             stream: true
+//         }))
+// };
+
+// html
+const htmlTask = () => {
     return gulp.src(config.app.html)
-        .pipe(pug())
-        .pipe(pug({
-            pretty: false
-        }))
         .pipe(gulp.dest(config.dist.html))
         .pipe(browserSync.reload({
             stream: true
@@ -106,7 +117,8 @@ const fontsTask = () => {
 
 // watcher
 const watchFiles = () => {
-    gulp.watch([config.watch.html], gulp.series(pugTask));
+    // gulp.watch([config.watch.html], gulp.series(pugTask));
+    gulp.watch([config.watch.html], gulp.series(htmlTask));
     gulp.watch([config.watch.style], gulp.series(scssTask));
     gulp.watch([config.watch.js], gulp.series(jsTask));
     gulp.watch([config.watch.img], gulp.series(imgTask));
@@ -115,7 +127,8 @@ const watchFiles = () => {
 
 // start
 const start = () => {
-    gulp.series(pugTask, scssTask, jsTask, imgTask, fontsTask);
+    // gulp.series(pugTask, scssTask, jsTask, imgTask, fontsTask);
+    gulp.series(htmlTask, scssTask, jsTask, imgTask, fontsTask);
 }
 
 
